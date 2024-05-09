@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('teacher_id')->constrained('users')->onDelete('cascade');
-            $table->dateTime('start_time');
-            $table->dateTime('end_time');
+            $table->integer('start_time');
+            $table->integer('end_time');
             $table->integer('credit_hours');
         });
     }

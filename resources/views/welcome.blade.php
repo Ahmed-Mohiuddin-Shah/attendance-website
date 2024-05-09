@@ -35,7 +35,7 @@
     </div>
 
     <div class="fixed bottom-0 right-0 p-4">
-        <p class="text-sm">Made with ❤️ by Ahmed Mohiuddin</p>
+        <p class="text-sm text-white">Made with ❤️ by Ahmed Mohiuddin</p>
     </div>
 
 </body>

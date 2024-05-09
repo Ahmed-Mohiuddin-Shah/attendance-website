@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attendances', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+        Schema::create('attendancesheets', function (Blueprint $table) {
+            $table->foreignId('student_id')->constrained()->onDelete('cascade');
             $table->foreignId('class_id')->constrained('classrooms')->onDelete('cascade');
-            $table->boolean('is_present')->default(true);
+            $table->boolean('status')->default(true);
             $table->date('date');
         });
     }
@@ -22,6 +22,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
+
     public function down(): void
     {
         Schema::dropIfExists('attendances');

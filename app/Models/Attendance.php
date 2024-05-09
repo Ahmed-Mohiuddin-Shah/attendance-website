@@ -21,7 +21,8 @@ class Attendance extends Model
     protected $fillable = [
         'user_id',
         'class_id',
-        'is_present'
+        'is_present',
+        'date'
     ];
 
     /**
@@ -42,6 +43,7 @@ class Attendance extends Model
     {
         return [
             'is_present' => 'boolean',
+            'date' => 'datetime',
         ];
     }
 }

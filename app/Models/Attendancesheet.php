@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Classroom extends Model
+class Attendancesheet extends Model
 {
     use HasFactory, Notifiable;
 
@@ -18,12 +18,12 @@ class Classroom extends Model
      *
      * @var array<int, string>
      */
+
     protected $fillable = [
-        'name',
-        'teacher_id',
-        'start_time',
-        'end_time',
-        'credit_hours'
+        'student_id',
+        'class_id',
+        'date',
+        'status',
     ];
 
     /**
@@ -31,6 +31,7 @@ class Classroom extends Model
      *
      * @var array<int, string>
      */
+
     protected $hidden = [
         'remember_token',
     ];
@@ -43,9 +44,10 @@ class Classroom extends Model
     protected function casts(): array
     {
         return [
-            'start_time' => 'integer',
-            'end_time' => 'integer',
-            'credit_hours' => 'integer',
+            'student_id' => 'integer',
+            'class_id' => 'integer',
+            'date' => 'date',
+            'status' => 'string',
         ];
     }
-}
+};
